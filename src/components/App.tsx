@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import NavBar from './common/Navbar';
 import { AppRoutes } from './Routes';
+import { GlobalStyle } from './styles/global-styles';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Container>
         <AppRoutes />
       </Container>
+      <GlobalStyle />
     </BrowserRouter>
   );
 };
