@@ -1,6 +1,7 @@
-import { AppBar, Button, colors, Theme, Toolbar } from '@mui/material';
-import { createStyles, makeStyles } from '@mui/styles';
 import { Link } from 'react-router-dom';
+import { createStyles, makeStyles } from '@mui/styles';
+import { AppBar, Button, colors, Theme, Toolbar } from '@mui/material';
+
 // import { useTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,33 +23,33 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function NavBar() {
+function NavBar() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Link className={`${classes.link} ${classes.title}`} to={'/'}>
+          <Link className={`${classes.link} ${classes.title}`} to="/">
             LOGO
           </Link>
           <Button color="inherit">
-            <Link className={classes.link} to={'/'}>
+            <Link className={classes.link} to="/">
               Home
             </Link>
           </Button>
           <Button color="inherit">
-            <Link className={classes.link} to={'/about'}>
+            <Link className={classes.link} to="/about">
               About
             </Link>
           </Button>
           <Button color="inherit">
-            <Link className={classes.link} to={'/dashboard'}>
+            <Link className={classes.link} to="/dashboard">
               Dashboard
             </Link>
           </Button>
           <Button color="inherit">
-            <Link className={classes.link} to={'/login'}>
+            <Link className={classes.link} to="/login">
               Login
             </Link>
           </Button>
@@ -57,3 +58,5 @@ export default function NavBar() {
     </div>
   );
 }
+
+export default NavBar;

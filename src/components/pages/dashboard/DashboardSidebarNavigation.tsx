@@ -7,7 +7,7 @@ import {
   Theme,
   Toolbar,
 } from '@mui/material';
-import { Link, useMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { createStyles, makeStyles } from '@mui/styles';
 import { useEffect } from 'react';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -44,55 +44,53 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const DashboardSidebarNavigation = () => {
+function DashboardSidebarNavigation() {
   const classes = useStyles();
   // const match = useMatch();
 
   useEffect(() => {}, []);
 
   return (
-    <>
-      <div className={classes.root}>
-        <Drawer
-          className={classes.drawer}
-          variant="permanent"
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          anchor="left"
+    <div className={classes.root}>
+      <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+      >
+        <Toolbar
+          style={{ width: '6rem', height: 'auto' }}
+          className={classes.toolbar}
         >
-          <Toolbar
-            style={{ width: '6rem', height: 'auto' }}
-            className={classes.toolbar}
-          >
-            <Link to='/dashboard' className={classes.logoWithLink}>
-              Logo
+          <Link to="/dashboard" className={classes.logoWithLink}>
+            Logo
+          </Link>
+        </Toolbar>
+        <div className={classes.drawerContainer}>
+          <List>
+            <Link className={classes.link} to="/dashboard/settings-and-privacy">
+              <ListItem button>
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary="settings and privacy" />
+              </ListItem>
             </Link>
-          </Toolbar>
-          <div className={classes.drawerContainer}>
-            <List>
-              <Link className={classes.link} to={`/dashboard/settings-and-privacy`}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <SettingsIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'settings and privacy'} />
-                </ListItem>
-              </Link>
-              <a className={classes.link} href={'/'}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <ExitToAppIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'logout'} />
-                </ListItem>
-              </a>
-            </List>
-          </div>
-        </Drawer>
-      </div>
-    </>
+            <a className={classes.link} href="/">
+              <ListItem button>
+                <ListItemIcon>
+                  <ExitToAppIcon />
+                </ListItemIcon>
+                <ListItemText primary="logout" />
+              </ListItem>
+            </a>
+          </List>
+        </div>
+      </Drawer>
+    </div>
   );
-};
+}
 
 export default DashboardSidebarNavigation;

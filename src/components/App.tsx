@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 
 import NavBar from './common/Navbar';
-import { AppRoutes } from './Routes';
-import { GlobalStyle } from './styles/global-styles';
+import AppRoutes from './Routes';
+import GlobalStyle from '../styles/global-styles';
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <Helmet
@@ -22,6 +22,6 @@ const App = () => {
       <GlobalStyle />
     </BrowserRouter>
   );
-};
+}
 
 export default App;

@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const AboutPage = () => {
+function AboutPage() {
   return (
     <div>
       <Helmet>
@@ -10,6 +10,6 @@ const AboutPage = () => {
       <h1>This is About Page</h1>
     </div>
   );
-};
+}
 
 export default AboutPage;

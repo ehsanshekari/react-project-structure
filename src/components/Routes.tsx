@@ -5,7 +5,7 @@ import HomePage from './pages/website/HomePage';
 import NotFoundPage from './pages/website/NotFoundPage';
 import Dashboard from './pages/dashboard/Dashboard';
 
-export const AppRoutes = () => {
+function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -14,4 +14,6 @@ export const AppRoutes = () => {
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
-};
+}
+
+export default AppRoutes;

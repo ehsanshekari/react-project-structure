@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const HomePage = () => {
+function HomePage() {
   return (
     <div>
       <Helmet>
@@ -10,6 +10,6 @@ const HomePage = () => {
       <h1>Main Page</h1>
     </div>
   );
-};
+}
 
 export default HomePage;
