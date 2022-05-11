@@ -36,7 +36,6 @@ module.exports = {
     // },
     'import/resolver': {
       typescript: {},
-      //  maybe needed,
       // node: {
       //   extensions: ['.js', '.jsx', '.ts', '.tsx'],
       // },
